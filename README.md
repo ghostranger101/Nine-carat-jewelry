@@ -36,14 +36,14 @@ http://<your-ip>:5000
 
 ```
 Catalouge/
-├── app.py                 (Flask web server)
-├── catalog.html           (Frontend with Tailwind CSS)
-├── pipeline/
-│   └── newpipe.py        (PDF image extraction utility)
-├── extracted_images/     (42 jewelry design photos)
-├── Old_Design_Template/  (source PDF)
+├── app.py              Flask web server
+├── catalog.html      Frontend (Tailwind CDN)
+├── static/             Static assets (e.g. hero image)
+├── extracted_images/   Local JPEG/PNG catalog (not in git; add your own)
 └── requirements.txt
 ```
+
+Place catalog images in `extracted_images/` on the machine that runs the app. That folder is listed in `.gitignore` so clones stay small and `git push` stays reliable.
 
 ## API Endpoints
 
@@ -70,15 +70,6 @@ Edit `app.py` to modify:
 - Price calculation: See `get_catalog_data()`
 - Gold theme color: `#D4AF37`
 
-## PDF Image Extraction
+## Adding designs
 
-To extract images from new PDFs:
-
-```bash
-python -m pipeline.newpipe path/to/pdfs output_folder
-```
-
-Example:
-```bash
-python -m pipeline.newpipe Old_Design_Template extracted_images
-```
+Export or copy JPEG/PNG files into `extracted_images/`. The app reads filenames to build categories and listing metadata.
