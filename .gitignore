@@ -1,0 +1,15 @@
+# Large local assets — keep on disk for Flask; do not commit
+extracted_images/
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+
+# Env / OS
+.env
+.env.*
+.DS_Store
+Thumbs.db

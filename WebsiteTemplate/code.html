@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .luxury-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "surface-bright": "#393939",
+                      "primary": "#f2ca50",
+                      "surface-variant": "#353534",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#735c00",
+                      "on-tertiary": "#313030",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-fixed": "#241a00",
+                      "background": "#131313",
+                      "secondary-container": "#454747",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#b4b2b2",
+                      "secondary": "#c6c6c6",
+                      "outline-variant": "#4d4635",
+                      "surface-dim": "#131313",
+                      "surface": "#131313",
+                      "on-primary": "#3c2f00",
+                      "on-surface-variant": "#d0c5af",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-container": "#454544",
+                      "primary-fixed-dim": "#e9c349",
+                      "on-primary-fixed-variant": "#574500",
+                      "outline": "#99907c",
+                      "on-secondary": "#2f3131",
+                      "primary-fixed": "#ffe088",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-container": "#554300",
+                      "primary-container": "#d4af37",
+                      "surface-container": "#201f1f",
+                      "inverse-on-surface": "#313030",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-tint": "#e9c349",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-surface": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-error": "#690005",
+                      "surface-container-highest": "#353534",
+                      "surface-container-high": "#2a2a2a",
+                      "tertiary": "#d0cdcd",
+                      "on-secondary-container": "#b5b5b5",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-secondary-fixed-variant": "#454747"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "xxl": "80px",
+                      "margin-edge": "64px",
+                      "container-max": "1440px",
+                      "xl": "48px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "sm": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Manrope", "sans-serif"],
+                      "body-md": ["Manrope", "sans-serif"],
+                      "label-caps": ["Manrope", "sans-serif"],
+                      "headline-lg": ["Noto Serif", "serif"],
+                      "headline-md": ["Noto Serif", "serif"],
+                      "interactive-label": ["Manrope", "sans-serif"],
+                      "display-xl": ["Noto Serif", "serif"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "interactive-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800">
+<div class="flex justify-between items-center px-8 py-6 max-w-[1920px] mx-auto">
+<div class="flex-1 flex gap-8 items-center">
+<a class="font-serif text-sm tracking-widest uppercase text-neutral-400 hover:text-white transition-colors duration-500" href="#">Collections</a>
+<a class="font-serif text-sm tracking-widest uppercase text-[#D4AF37] border-b border-[#D4AF37] pb-1" href="#">High Jewelry</a>
+<a class="font-serif text-sm tracking-widest uppercase text-neutral-400 hover:text-white transition-colors duration-500" href="#">Bespoke</a>
+<a class="font-serif text-sm tracking-widest uppercase text-neutral-400 hover:text-white transition-colors duration-500" href="#">Heritage</a>
+</div>
+<div class="text-xl sm:text-2xl font-serif tracking-[0.12em] text-[#D4AF37] flex-1 text-center">
+                Nine carat jewelry
+            </div>
+<div class="flex-1 flex justify-end items-center gap-6">
+<span class="material-symbols-outlined text-[#D4AF37] cursor-pointer">shopping_bag</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[819px] w-full overflow-hidden flex items-center justify-center">
+<img alt="" class="absolute inset-0 z-0 w-full h-full object-cover" data-alt="A macro cinematic photograph of an exquisite high-jewelry diamond necklace featuring pear-cut diamonds set in white gold, resting on a dark velvet surface. The lighting is dramatic and moody, with sharp highlights creating a crystalline shimmer against a deep charcoal background. The composition is centered and elegant, evoking a sense of silent luxury and masterful craftsmanship, aligned with a refined jewelry brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7eD-BY9xD0mgBW2CX4aTn3Lro63v8rz9sjF9O3YHPemDNVh-acwnNS9Du9RlWG_5oQy9B2gXx4lzGHG-SWQVeUYgkeWJRy-IYC-F98rLrNbkIfDSX_1nF0WgeOMe4bISTjM1WffcANomTR91bGWSbKCXj8-WJwFL4kXqLa5HVsWEguRCf9qdkrUqBZ9yKotaeH7IIGduk8_TnmoJ_1ISqfGmW64beonj15H4eb0eqMtG7NhzwELepdlwY2eqLW3ygNSvwmYMZMM"/>
+<div class="absolute inset-0 bg-black/40 z-10"></div>
+<div class="relative z-20 text-center max-w-4xl px-gutter">
+<h1 class="font-display-xl text-display-xl text-on-background mb-8 italic">The High Jewelry Collection</h1>
+<div class="w-24 h-px bg-primary mx-auto mb-8"></div>
+<p class="font-body-lg text-body-lg text-neutral-300 max-w-2xl mx-auto">Discover a symphony of light and stone, where every facet tells a story of heritage and peerless artisan skill.</p>
+</div>
+</section>
+<!-- Product Explorer -->
+<section class="max-w-[1920px] mx-auto px-margin-edge py-xxl flex gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-64 flex-shrink-0 sticky top-32 h-fit">
+<div class="space-y-12">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-6">CATEGORY</h3>
+<ul class="space-y-4">
+<li><a class="font-interactive-label text-interactive-label text-on-surface hover:text-primary transition-colors" href="#">All Pieces</a></li>
+<li><a class="font-interactive-label text-interactive-label text-neutral-500 hover:text-primary transition-colors" href="#">Necklaces</a></li>
+<li><a class="font-interactive-label text-interactive-label text-neutral-500 hover:text-primary transition-colors" href="#">Earrings</a></li>
+<li><a class="font-interactive-label text-interactive-label text-neutral-500 hover:text-primary transition-colors" href="#">Rings</a></li>
+<li><a class="font-interactive-label text-interactive-label text-neutral-500 hover:text-primary transition-colors" href="#">Bracelets</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-6">MATERIAL</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<div class="w-3 h-3 border border-outline rounded-full"></div>
+<span class="font-interactive-label text-interactive-label text-on-surface">18k Yellow Gold</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-3 h-3 bg-primary border border-primary rounded-full"></div>
+<span class="font-interactive-label text-interactive-label text-on-surface">Platinum &amp; White Gold</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-3 h-3 border border-outline rounded-full"></div>
+<span class="font-interactive-label text-interactive-label text-on-surface">Rose Gold</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-6">PRICE RANGE</h3>
+<div class="space-y-4">
+<div class="h-1 bg-surface-container-high relative">
+<div class="absolute left-0 right-1/4 h-full bg-primary"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-on-background rounded-full border border-primary"></div>
+<div class="absolute right-1/4 top-1/2 -translate-y-1/2 w-3 h-3 bg-on-background rounded-full border border-primary"></div>
+</div>
+<div class="flex justify-between font-label-caps text-[10px] text-neutral-500">
+<span>€10,000</span>
+<span>€500,000+</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Grid Content -->
+<div class="flex-grow">
+<div class="grid grid-cols-3 gap-x-8 gap-y-16">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional studio product shot of a minimalist gold ring with a single baguette-cut diamond. The piece is set against a dark charcoal background with soft, directional lighting that highlights the polished metal texture. The image has a high-end luxury feel, consistent with the brand's quiet luxury aesthetic, emphasizing sharp detail and clean geometric lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK3kVw3r4KGboCHEtYgtZmHy8eQ8Md4fVxafsNlnBa6RnaoCJn64bGBogMOUVQHhbrXHhxRw1iTTF_Ugu8GGI5e4dUkPvgmtFlQdI20W_PSvg7JWHQ2Kq_-tn9ONc8LciiaBAHfrN9QNS99FGbx6VLCVRyB-fA-DZzCcNUjC_RpSoG9JFQvlwAGWhkRy44vQTEz6kluwKkhtCRIBYMnw-EchTS0bNblMc1NgtOSa5L9NgrWTR1YKPgnzh_KmDPZ4VbHXvdIfVy1Xc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Aurelia Solitaire</h3>
+<p class="font-label-caps text-neutral-500 mb-2">18K WHITE GOLD &amp; DIAMOND</p>
+<p class="font-body-md text-primary">€12,500</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detailed studio close-up of a pair of high-jewelry drop earrings featuring rare blue sapphires and pavé diamonds set in platinum. The composition uses a dark, moody background with elegant, low-contrast shadows. The lighting is precisely focused on the gemstones to reveal their depth and clarity, reflecting a sophisticated gallery-like presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxa_VuM-eFUcfDpjfkLKJ_x8dX76EIc5mCy6JBeY-x9Ura0zZelB5CqZcVmum2XJ5yeGSzQxZsyictE91X6JRTVlqEYL1fLhf6REF3860kB73EMx3twlXFKWjRMrxXP-bSfxKXwTTvrMciWTz442IEzI26RUyQfxO_eLCcF_lTvyBS3DrZD78mU3PJtPsN3RYuvp2yzZiI5nPcN59fr4j3Nb8BlBp5nvnuk-_vCHwAyE_rjg9GN5g7V7Pe7TeXovdOMgbybBibi5M"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Céleste Drop Earrings</h3>
+<p class="font-label-caps text-neutral-500 mb-2">PLATINUM &amp; SAPPHIRE</p>
+<p class="font-body-md text-primary">€24,800</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A top-down architectural photograph of a thick, gold textured bracelet with integrated precious stones, presented on a dark grey stone surface. The image highlights the craftsmanship of the metalwork, with light catching the ridges and textures. The style is minimalist and commanding, emphasizing the bold, sculptural form of the jewelry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtd_rQnaj0Jv5Mi1sRUjG6-9FfTl_FgOz-_4_6Gygw6_nfyKyGpgafscWUNUdXA4rhbz6tUY10xA9CYAlDm4PcL7KpC5AxYMjR-XEY3sZEMSkdKFSjgkDS753ZkWtOIpmPuY0KNql4QQsUmLyJYPgvwmCdbw3xihT3I3T_O5d-Luh0EzohzIYe75AuSz0HUxjs1jj24yIBtd5Wx6MduSInm8aHCKcDJQWJNkdV6LG_8d5kK3HXi5GkuPj2Ohmv2AacagXPOGCgbcI"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Elysian Cuff</h3>
+<p class="font-label-caps text-neutral-500 mb-2">18K YELLOW GOLD</p>
+<p class="font-body-md text-primary">€18,200</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious jewelry display featuring a diamond tennis bracelet on a smooth black marble pedestal. The lighting is high-contrast, creating brilliant star-burst reflections from each diamond. The surrounding environment is a minimalist dark void, making the jewelry the sole focus. The visual tone is one of extreme exclusivity and technical perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx4N-HD5DkGNxQyt99qAJs_FGNZOhjz3I1jwKZ_kowWItNhBy482l3NlS7XjbECX29jz24kSKGolOffBCATsWqG6x72Z0qAqAzc1xRdSVc0naucyCuJCmIYvEtJ3ilaCcsXo0KQ-xNovHBCp0xNkhAl83iDMlnm6P-4exu1bcXPmw2xkt5L-K5HG0pc2npu1q2R-E9rfpZjtUVSOpWGpdFTojS810W01JaQpbBnsDPN14r6nOJeUXsytgDCy39zSI0T2f4MeWL5Ko"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Starlight Riviera</h3>
+<p class="font-label-caps text-neutral-500 mb-2">WHITE GOLD &amp; 5CT DIAMONDS</p>
+<p class="font-body-md text-primary">€45,000</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A portrait-style macro shot of a unique artisanal ring featuring an emerald-cut emerald surrounded by micro-diamonds in a vintage-inspired gold setting. The background is a soft-focus dark interior of a luxury atelier. The lighting is warm and inviting, emphasizing the deep green of the emerald and the warmth of the gold, following a timeless heritage style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuwdR8ECR13DhW0X44OMS4Ck8WT0fEPTKeRwFkTcyAPR5xTCJYV4taLPgi0jwVUsiQopF0uRG5Z9bqtzz0qBsK1OtFYrAgbU1Q4FCA8oaGsO5jHoFHmk5YwOj1DrZzK5WD4v8rcbBBZQLCx949IbZDooL0zcuETuJWXu2UwZq8tHFXixLUil-mflz5yfxYq0JjgVTQwFu8AOEQWvfBD7KhZQmFb6xtfgF16QtYL8XXIT-X58VyuxXhjKQAU1S70kSJ4eN5-e3EdZE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Verdant Heritage Ring</h3>
+<p class="font-label-caps text-neutral-500 mb-2">18K GOLD &amp; COLOMBIAN EMERALD</p>
+<p class="font-body-md text-primary">€32,000</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[4/5] bg-surface-container-low border border-neutral-900 transition-all duration-700 group-hover:border-primary/40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An artistic side-profile shot of a diamond-encrusted watch or bracelet with intricate metal links, captured in a monochromatic dark palette with a single golden highlight. The texture of the diamonds and the smooth polished surface of the metal create a dynamic visual interplay. The atmosphere is quiet, expensive, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq2vo9480TJ5QI_--CKJqFdeZ8-1y9wwzsjzhM4vm5-zpmoekU6yv1f2pGeZg5aleYOMV4yp3A-9_VNIaKqAgcOu-jrgSKP4Hl_2DFNZ0BiVDBATdOQYNq5-aB0SmoHkCidRT7rBoULNUGgUJocUs5IvcgK0z-FBdkBsNLckwS3I6ttF-dHlziWWsGdtt6kNY2ktmFPwsSj_80PDMj1G67KQjGUWeS9ghwY9cw4EBYoc0v_3xhWgDE61Wfq8xCiEZzlF-f8DcX08I"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-caps text-xs tracking-widest bg-black/20 hover:bg-primary hover:text-black transition-all duration-300">QUICK VIEW</button>
+</div>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline-md text-body-lg text-on-surface mb-1">Nocturnal Link</h3>
+<p class="font-label-caps text-neutral-500 mb-2">BLACKENED GOLD &amp; DIAMONDS</p>
+<p class="font-body-md text-primary">€58,000</p>
+</div>
+</div>
+</div>
+<div class="mt-24 text-center">
+<button class="px-12 py-4 border border-neutral-700 font-label-caps tracking-[0.2em] hover:border-primary transition-colors">LOAD MORE PIECES</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-neutral-800 mt-24 bg-neutral-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-16 py-12 gap-8 max-w-[1920px] mx-auto">
+<div class="text-lg font-serif tracking-wide text-[#D4AF37]">Nine carat jewelry</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-4">
+<a class="font-serif text-xs tracking-widest uppercase text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300" href="#">Sustainability</a>
+<a class="font-serif text-xs tracking-widest uppercase text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300" href="#">Care Guide</a>
+<a class="font-serif text-xs tracking-widest uppercase text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300" href="#">Private Appointments</a>
+<a class="font-serif text-xs tracking-widest uppercase text-neutral-500 hover:text-[#D4AF37] transition-colors duration-300" href="#">Shipping &amp; Returns</a>
+</div>
+<div class="font-serif text-xs tracking-widest uppercase text-neutral-500">
+                © 2024 NINE CARAT JEWELRY. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+</body></html>
