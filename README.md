@@ -1,4 +1,4 @@
-# AURELIAN Jewelry Catalog Web App
+# Jewelry Catalog Web App
 
 A responsive web application to display extracted jewelry catalog images with a luxury, modern aesthetic. Works on desktop, tablet, and mobile devices.
 
