@@ -3,7 +3,9 @@ Jewelry Catalog Web App
 A Flask application to display extracted jewelry images in a luxury catalog format.
 """
 
-from flask import Flask, render_template_string, jsonify, send_from_directory
+import os
+
+from flask import Flask, jsonify, render_template_string, send_from_directory
 from pathlib import Path
 
 from catalog_data import build_catalog_entries, hero_from_catalog
@@ -60,4 +62,6 @@ def serve_image(filename):
 if __name__ == "__main__":
     print(f"Starting {CATALOG_TITLE} Catalog Web App...")
     print("Open http://localhost:5000 in your browser")
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", "5000"))
+    debug = os.environ.get("FLASK_DEBUG", "").strip() == "1"
+    app.run(debug=debug, host="0.0.0.0", port=port)

@@ -45,6 +45,20 @@ Catalouge/
 
 Place catalog images in `extracted_images/` on the machine that runs the app. That folder is listed in `.gitignore` so clones stay small and `git push` stays reliable.
 
+## Deploy (production)
+
+- **Linux (Render/Railway/VPS)**:
+
+```bash
+gunicorn -w 2 -b 0.0.0.0:${PORT:-5000} wsgi:app
+```
+
+- **Windows (production-ish)**:
+
+```bash
+waitress-serve --listen=0.0.0.0:%PORT% wsgi:app
+```
+
 ## API Endpoints
 
 - `GET /` — Main catalog page
@@ -65,10 +79,9 @@ Each catalog item includes:
 ## Customization
 
 Edit `app.py` to modify:
-- Catalog title: `CATALOG_TITLE = "AURELIAN"`
+- Catalog title: `CATALOG_TITLE = "Nine carat jewelry"`
 - Items per page: `itemsPerPage = 12` (in catalog.html)
-- Price calculation: See `get_catalog_data()`
-- Gold theme color: `#D4AF37`
+- Hero image: replace `static/hero.png`
 
 ## Adding designs
 
