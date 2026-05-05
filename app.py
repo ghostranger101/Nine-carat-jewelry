@@ -5,13 +5,14 @@ A Flask application to display extracted jewelry images in a luxury catalog form
 
 from flask import Flask, render_template_string, jsonify, send_from_directory
 from pathlib import Path
-import json
+
+from catalog_data import build_catalog_entries, hero_from_catalog
 
 app = Flask(__name__)
 
 # Configuration
 BASE_DIR = Path(__file__).resolve().parent
-IMAGES_DIR = Path("extracted_images")
+IMAGES_DIR = BASE_DIR / "extracted_images"
 CATALOG_TITLE = "Nine carat jewelry"
 HERO_IMAGE_PATH = BASE_DIR / "static" / "hero.png"
 HERO_IMAGE_URL = "/static/hero.png"
@@ -19,54 +20,12 @@ HERO_IMAGE_URL = "/static/hero.png"
 
 def get_catalog_data():
     """Extract metadata from image filenames and return structured data."""
-    if not IMAGES_DIR.exists():
-        return []
-
-    catalog = []
-    images = sorted(IMAGES_DIR.glob("*.jpeg")) + sorted(IMAGES_DIR.glob("*.jpg")) + sorted(IMAGES_DIR.glob("*.png"))
-
-    for idx, image_path in enumerate(images, start=1):
-        filename = image_path.stem
-        parts = filename.split("_")
-        
-        # Parse filename: BRACLET_p1_0 -> category, page, index
-        if len(parts) >= 2:
-            category = "_".join(parts[:-2])  # e.g., "BRACLET", "P SET"
-            page_num = parts[-2].replace("p", "")  # e.g., "1"
-            img_index = parts[-1]  # e.g., "0"
-        else:
-            category = filename
-            page_num = "1"
-            img_index = "0"
-
-        # Clean up category names for display
-        category_display = category.replace("-", " ").replace("dec", "").strip()
-        
-        catalog.append({
-            "id": idx,
-            "filename": image_path.name,
-            "src": f"/images/{image_path.name}",
-            "design_number": f"Design {idx:03d}",
-            "page": page_num,
-            "material": "9-carat gold jewelry",
-            "category": category_display,
-        })
-
-    return catalog
+    return build_catalog_entries(IMAGES_DIR, "/images")
 
 
 def get_hero_image_src(catalog):
     """Choose a hero image from extracted catalog images, avoiding filenames that imply text or logos."""
-    if not catalog:
-        return None
-
-    blacklist_keywords = {"logo", "text", "watermark", "page", "p", "cover", "header"}
-    for item in catalog:
-        name = item["filename"].lower()
-        if not any(keyword in name for keyword in blacklist_keywords):
-            return item["src"]
-
-    return catalog[0]["src"]
+    return hero_from_catalog(catalog)
 
 
 @app.route("/")
